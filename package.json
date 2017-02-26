@@ -1,0 +1,26 @@
+{
+  "name": "onescope",
+  "version": "0.0.1",
+  "description": "Common.js bundler that hoists all modules into a single scope.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "keywords": [
+    "packaging",
+    "bundle",
+    "commonjs",
+    "browser",
+    "require"
+  ],
+  "author": "Michael Yong",
+  "license": "MIT",
+  "dependencies": {
+    "ast-types": "^0.9.5",
+    "recast": "^0.11.22"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0"
+  }
+}
