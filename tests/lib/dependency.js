@@ -24,19 +24,22 @@ describe('dependencies', function() {
         it('should return the list of bundle dependencies', function() {
             var expected;
 
-            expected = ['bar2'];
+            expected = ['core', 'bar2'];
             expect(dependencies.bundleDependencies('bar2', stubRoot)).to.eql(expected);
 
-            expected = ['bar2', 'foo2'];
+            expected = ['core', 'bar2', 'foo2'];
             expect(dependencies.bundleDependencies('foo2', stubRoot)).to.eql(expected);
 
-            expected = ['bar2', 'foo2', 'baz'];
+            expected = ['core', 'bar2', 'foo2', 'baz'];
             expect(dependencies.bundleDependencies('baz', stubRoot)).to.eql(expected);
 
-            expected = ['bar2', 'foo2', 'baz', 'foo', 'bar'];
+            expected = ['core', 'bar2', 'foo2', 'baz', 'foo', 'bar'];
             expect(dependencies.bundleDependencies('bar', stubRoot)).to.eql(expected);
 
-            expected = ['bar2', 'foo2', 'baz', 'bar', 'foo', 'entry'];
+            expected = ['core', 'bar2', 'foo2', 'baz', 'foo'];
+            expect(dependencies.bundleDependencies('foo', stubRoot)).to.eql(expected);
+
+            expected = ['core', 'bar2', 'foo2', 'baz', 'foo', 'bar', 'entry'];
             expect(dependencies.bundleDependencies('entry', stubRoot)).to.eql(expected);
         });
     });
