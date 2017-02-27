@@ -17,6 +17,13 @@ describe('dependencies', function() {
             var expected = ['foo', 'bar'];
             expect(dependencies.getRequiredModules(sourceCode)).to.eql(expected);
         });
+
+        it('should handle relative requires', function() {
+            var current = 'shared/baz';
+            var sourceCode = 'require("./foo"); require("../bar");';
+            var expected = ['shared/foo', 'bar'];
+            expect(dependencies.getRequiredModules(sourceCode, current)).to.eql(expected);
+        });
     });
 
     describe('bundleDependencies', function() {

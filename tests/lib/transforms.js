@@ -102,6 +102,18 @@ describe('transforms', function() {
             expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
         });
 
+        it('should handle relative requires', function() {
+            var ast = sourceCodeToAst('var foo = require("./foo");');
+            var expectedAst = sourceCodeToAst('var foo = $$module$$foo;');
+            transforms.replaceRequireCalls(ast, '$$module$$', 'bar');
+            expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
+
+            ast = sourceCodeToAst('var foo = require("./foo");');
+            expectedAst = sourceCodeToAst('var foo = $$module$$shared_foo;');
+            transforms.replaceRequireCalls(ast, '$$module$$', 'shared/bar');
+            expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
+        });
+
         it('should sanitize required module names', function() {
             var ast = sourceCodeToAst('var foo = require("shared/foo");');
             var expectedAst = sourceCodeToAst('var foo = $$module$$shared_foo;');
