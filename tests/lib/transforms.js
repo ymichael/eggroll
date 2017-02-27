@@ -57,6 +57,18 @@ describe('transforms', function() {
             transforms.prefixVariables(ast, {a: true}, 'test');
             expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
         });
+
+        it('should handle inherited properties on Object correctly', function() {
+            var ast = sourceCodeToAst('constructor.foo();');
+            var expectedAst = sourceCodeToAst('constructor.foo();');
+            transforms.prefixVariables(ast, {}, 'test');
+            expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
+
+            ast = sourceCodeToAst('constructor.foo();');
+            expectedAst = sourceCodeToAst('testconstructor.foo();');
+            transforms.prefixVariables(ast, {'constructor': true}, 'test');
+            expect(types.astNodesAreEquivalent(ast, expectedAst)).to.be(true);
+        });
     });
 
     describe('renameModuleExports', function() {
