@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Common.js bundler that hoists all modules into a single scope.",
   "main": "index.js",
+  "bin": {
+    "onescope": "bin/cli.js"
+  },
   "scripts": {
     "test": "mocha tests --recursive"
   },
@@ -17,7 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "ast-types": "^0.9.5",
-    "recast": "^0.11.22"
+    "recast": "^0.11.22",
+    "yargs": "^6.6.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

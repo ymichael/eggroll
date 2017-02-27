@@ -1,17 +1,13 @@
-#!/usr/lib/env node
-
-var fs = require('fs');
+var bundle = require('./lib/bundle');
+var dependency = require('./lib/dependency');
 var modules = require('./lib/modules');
+var transforms = require('./lib/transforms');
+var utils = require('./lib/utils');
 
-var MODULE_PREFIX = '$$module$$';
-
-if (require.main === module) {
-    var args = process.argv.slice(2);
-    if (args.length == 0) {
-        return;
-    }
-
-    var sourceCode = fs.readFileSync(args[0], 'utf-8');
-    var moduleName = 'foo';
-    console.log(modules.processModule(sourceCode, moduleName, MODULE_PREFIX));
-}
+module.exports = {
+    bundle: bundle,
+    dependency: dependency,
+    modules: modules,
+    transforms: transforms,
+    utils: utils,
+};
