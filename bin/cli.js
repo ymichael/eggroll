@@ -39,6 +39,11 @@ require('yargs')
                     default: '$$module$$',
                     type: 'string',
                 })
+                .option('resolve', {
+                    describe: 'whether to resolve dependencies',
+                    default: false,
+                    type: 'boolean',
+                })
                 .option('root', {
                     describe: 'root to resolve module ids',
                     default: process.cwd(),
@@ -49,7 +54,8 @@ require('yargs')
             var output = onescope.bundle.createBundle(
                 argv.files,
                 argv.root,
-                argv.prefix);
+                argv.prefix,
+                argv.resolve);
             console.log(output);
         })
     .argv;
