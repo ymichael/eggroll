@@ -1,4 +1,4 @@
-# onescope
+# eggroll
 
 Commonjs module bundler that hoists all modules into a single scope so they can
 be concatenated safely without wrapping them in individual function scopes.

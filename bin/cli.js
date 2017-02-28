@@ -1,8 +1,8 @@
 #!/usr/lib/env node
 /**
- * cli for onescope.
+ * cli.
  */
-var onescope = require('../index');
+var index = require('../index');
 
 require('yargs')
     .usage('Usage: $0 <command> [options]')
@@ -27,7 +27,7 @@ require('yargs')
         },
         function(argv) {
             console.log(
-                onescope.dependency.bundleDependencies(argv.entry, argv.root));
+                index.dependency.bundleDependencies(argv.entry, argv.root));
         })
     .command(
         'bundle [options] <files...>',
@@ -51,7 +51,7 @@ require('yargs')
                 });
         },
         function(argv) {
-            var output = onescope.bundle.createBundle(
+            var output = index.bundle.createBundle(
                 argv.files,
                 argv.root,
                 argv.prefix,
