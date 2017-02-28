@@ -27,6 +27,7 @@ https://gist.github.com/ymichael/91ef54ca7c756530635285cf8eb41d6e (318 bytes gzi
 
 ```
 npm install -g eggroll
+```
 
 ## Quick Start
 
