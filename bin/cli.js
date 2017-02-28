@@ -1,4 +1,4 @@
-#!/usr/lib/env node
+#!/usr/bin/env node
 /**
  * cli.
  */
