@@ -90,4 +90,4 @@ var eggroll = require('eggroll');
 - Original idea: http://www.nonblocking.io/2011/12/experimental-support-for-common-js-and.html
 - Motivation: https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/
 - Initial prototype: https://runkit.com/ymichael/58b1076665aeab00137caeb3
-- https://en.wikipedia.org/wiki/Egg\_roll
+- https://en.wikipedia.org/wiki/Egg_roll
