@@ -38,8 +38,8 @@ $ eggroll bundle --resolve main.js
 # Outputs a bundle using public/main.js as the entry point.
 $ eggroll bundle --resolve --root ./public ./public/main.js
 
-# Outputs a bundle containing the given files
-$ eggroll bundle --resolve --root ./public ./public/foo.js ./public/bar.js
+# Outputs a bundle containing just the given files
+$ eggroll bundle --root ./public ./public/foo.js ./public/bar.js
 ```
 
 ## Usage
